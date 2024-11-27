@@ -18,7 +18,7 @@ app.get('/blogs', (req, res) => {
 
 
 // GET All Users
-app.get("/userinfo", async(req, res) => {
+app.get("/usersinfo", async(req, res) => {
     try {
         const users = await User.find({})
         res.status(200).json(users)
@@ -68,7 +68,7 @@ app.delete("/userinfo/:id", async(req, res) => {
 })
 
 // Add Users
-app.post('/userinfo', async(req, res) => {
+app.post('/createuser', async(req, res) => {
     try {
         const users = await User.create(req.body)
         res.status(200).json(users)
