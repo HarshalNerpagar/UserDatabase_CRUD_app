@@ -1,3 +1,4 @@
+require('dotenv').config();  // Ensure dotenv is properly initialized
 const express = require('express')
 const mongoose = require('mongoose')
 
@@ -80,7 +81,7 @@ app.post('/createuser', async(req, res) => {
 
 
 
-mongoose.connect("mongodb+srv://harshalj23csai:harshalj23csai@harshalapi.0zx45.mongodb.net/?retryWrites=true&w=majority&appName=HarshalAPI")
+mongoose.connect(process.env.MONGO_URL)
 .then(() => {
     console.log("DataBase Connected Successfully");
     app.listen(3000, () => {
